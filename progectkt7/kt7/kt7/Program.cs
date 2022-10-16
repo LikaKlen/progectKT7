@@ -11,11 +11,11 @@
         Console.WriteLine("Имя" + name +"Фамилия" +surname+ "Возраст" +age+ "Курс обучения" +course+ "Номер зачетной книги" +studentbook+ "Форма обучения" +form);
     }
     public void InputInfo() {
-        name = "Dasha";
-        surname = "Velikanova";
-        age = 18;
-        course = 2;
-        studentbook = 75648576;
+        name = "Angelina";
+        surname = "Kalinina";
+        age = 20;
+        course = 1;
+        studentbook = 73648579;
         form = "Очная";
 
     }

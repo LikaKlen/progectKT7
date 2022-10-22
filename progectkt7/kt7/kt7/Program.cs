@@ -8,7 +8,7 @@
 
     public void Display()
     {
-        Console.WriteLine($"Имя {name} Фамилия {surname} Возраст {age} Курс обучения {studycourse} Номер зачетной книги {recordbook} Форма обучения {formtraining}");
+        Console.WriteLine($"Имя: {name}", "Фамилия: {surname}", "Возраст: {age}", "Курс обучения: {studycourse}", "Номер зачетной книги: {recordbook}", "Форма обучения: {formtraining}");
     }
     public void Info()
     {

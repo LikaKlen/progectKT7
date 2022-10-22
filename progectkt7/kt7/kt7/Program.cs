@@ -2,21 +2,22 @@
     public string name;
     public string surname;
     public int age;
-    public int course;
-    public int studentbook;
-    public string form;
+    public int studycourse;
+    public int recordbook;
+    public string formtraining;
 
-    public void Show()
+    public void Display()
     {
-        Console.WriteLine("Имя" + name +"Фамилия" +surname+ "Возраст" +age+ "Курс обучения" +course+ "Номер зачетной книги" +studentbook+ "Форма обучения" +form);
+        Console.WriteLine($"Имя {name} Фамилия {surname} Возраст {age} Курс обучения {studycourse} Номер зачетной книги {recordbook} Форма обучения {formtraining}");
     }
-    public void InputInfo() {
-        name = "Angelina";
-        surname = "Kalinina";
+    public void Info()
+    {
+        name = "Ангелина";
+        surname = "Калинина";
         age = 20;
-        course = 1;
-        studentbook = 73648579;
-        form = "Очная";
+        studycourse = 1;
+        recordbook = 2284451;
+        formtraining = "Очная";
 
     }
     public void Create()
@@ -28,15 +29,15 @@
         Console.WriteLine("Введите возраст");
         age = Convert.ToInt32(Console.ReadLine());
         Console.WriteLine("Введите курс обучения");
-        course = Convert.ToInt32(Console.ReadLine());
+        studycourse = Convert.ToInt32(Console.ReadLine());
         Console.WriteLine("Введите номер зачетной книжки");
-        studentbook = Convert.ToInt32(Console.ReadLine());
+        recordbook = Convert.ToInt32(Console.ReadLine());
         Console.WriteLine("Введите форму обучения");
-        form = Convert.ToString(Console.ReadLine());
+        formtraining = Convert.ToString(Console.ReadLine());
 
     }
 }
-class Program
+class Menu
 {
     static void Menu()
     {
@@ -59,7 +60,7 @@ class Program
 
             if (input == "1")
             {
-                Console.WriteLine("Вы выбрали (Добавить нового студента в группу)");
+                Console.WriteLine("Добавить нового студента в группу");
                 Student student = new Student();
                 student.Create();
                 allstudent.Add(student);
@@ -67,43 +68,43 @@ class Program
             }
             else if (input == "2")
             {
-                Console.WriteLine("Вы выбрали(Добавить нового студента в группу со стандартными значениями)");
+                Console.WriteLine("Добавить нового студента в группу со стандартными значениями");
                 Student student = new Student();
-                student.InputInfo();
+                student.Info();
                 allstudent.Add(student);
             }
             else if(input =="3")
             {
-                Console.WriteLine("Вы выбрали (Просмотр списка группы)");
+                Console.WriteLine("Просмотр списка группы");
                 foreach(var el in allstudent)
                 {
-                    el.Show();
+                    el.Display();
                 }
                     
             }
             else if(input=="4")
             {
-                Console.WriteLine("Вы выбрали (Удаление студента из группы по номеру зачетной книжки)");
-                Console.WriteLine("напишите номер зачетной книжки студента, которого хотите удалить");
+                Console.WriteLine("Удаление студента из группы по номеру зачетной книжки");
+                Console.WriteLine("Номер зачетной книжки студента, которого хотите удалить");
                 int delete = Convert.ToInt32(Console.ReadLine());
                 var i = 0;
-                var deleteStudentIndex = -999;
+                var deleteStudentIndex = -1;
                 foreach (var el in allstudent)
                 {
-                    if (el.studentbook == delete)
+                    if (el.recordbook == delete)
                     {
                         deleteStudentIndex = i;
                         
                     }
                     i++;
                 }
-                if(deleteStudentIndex!=-999)
+                if(deleteStudentIndex!=-1)
                 {
                     allstudent.RemoveAt(deleteStudentIndex);
                 }
                 else
                 {
-                    Console.WriteLine("Такого студента не существует");
+                    Console.WriteLine("Не существует");
                 }
 
                 
